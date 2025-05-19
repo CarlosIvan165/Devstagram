@@ -5,12 +5,12 @@
 @endsection
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-10 md:items-center ">
-        <div class="md:w-6/12 bg-white p-6 rounded-lg shadow-xl">
+    <div class="lg:flex md:justify-center md:gap-10 md:items-center ">
+        <div class="md:w-6/6 bg-white p-6 rounded-lg shadow-xl">
             <img src="{{ asset('img/registrar.jpg')}}" alt="Imagen registo de usuarios">
         </div>
-        <div class="md:w-4/12">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+        <div class="md:w-4/4">
+            <form class="md:p-3 p-6" action="{{ route('register') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray font-bold text-gray-500">Nombre</label>
