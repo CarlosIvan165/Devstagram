@@ -18,8 +18,7 @@
             <div>
                 <p class="font-bold">{{ $post->user->username }} </p>
                 <p class="mb-5">{{ $post->descripcion}}</p>
-                <p class="text-sm text-gray-600">{{ $post->created_at->diffForHumans()}}</p>
-                
+                <p class="text-sm text-gray-600">{{ $post->created_at->diffForHumans()}}</p>      
             </div>
             @auth
                 @if ($post->user_id === auth()->user()->id)

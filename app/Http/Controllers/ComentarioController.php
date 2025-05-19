@@ -13,7 +13,6 @@ class ComentarioController extends Controller
         //validar
         $request->validate([
             'comentario' => 'required|max:255',
-
         ]);
 
         //almacenar el resultado
