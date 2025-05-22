@@ -27,7 +27,7 @@ class PerfilController extends Controller
         
         $request->validate([
             'username' => ['required', 'unique:users,username,'.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,editar-perfil'],
-            'description' => 'required',
+            'description' ,
         ]);
 
         if($request->imagen){

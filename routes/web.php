@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuscadorController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,12 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', HomeController::class)->name('home')->middleware('auth');;
 
+//Buscador
+
+Route::get('/buscador', [BuscadorController::class, 'index'])->name('buscador.index');
+Route::get('/buscar-usuarios', [BuscadorController::class, 'buscar'])->name('usuarios.buscar');
+
+// Registrar
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -47,5 +54,3 @@ Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.in
 //Followers
 Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
 Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
-
-//Pagina Principal
