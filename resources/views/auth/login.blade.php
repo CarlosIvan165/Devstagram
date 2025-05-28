@@ -5,12 +5,12 @@
 @endsection
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-10 md:items-center">
-        <div class="md:w-6/6 bg-white p-6 rounded-lg shadow-xl">
+    <div class="lg:flex lg:justify-center lg:gap-10 lg:items-center">
+        <div class="lg:w-6/6 bg-white p-6 rounded-lg shadow-xl">
             <img src="{{ asset('img/login.jpg')}}" alt="Imagen registo de usuarios">
         </div>
-        <div class="md:w-4/4">
-            <form class="p-6 md:p-3" method="POST" action="{{ route('login') }}" novalidate>
+        <div class="lg:w-4/4">
+            <form class="p-6 lg:p-3" method="POST" action="{{ route('login') }}" novalidate>
                 @csrf
                 @if (session('mensaje'))
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ session('mensaje')}}</p>

@@ -21,11 +21,11 @@
                     @if($username->count())
                         <ul class="mt-6 w-15">
                             @foreach($username as $usuario)
-                                <li class="mt-5">
-                                    <a class="flex gap-3 items-center text-gray-600 text-sm" href="{{ route('posts.index', auth()->user()->username)}}">
-                                        <img class="rounded-full" src="{{ $usuario->imagen ? asset('perfiles').'/'. $usuario->imagen : asset('img/usuario.svg')}}" alt="Imagen usuario">  
-                                        <div>
-                                            <span class="font-bold uppercase">{{ $usuario->username }}</span>
+                                <li class="flex gap-3 mt-5">
+                                    <a class="flex gap-3 items-center text-gray-600 text-sm" href="{{ route('posts.index', $usuario->username)}}">
+                                        <img class="w-10 rounded-full" src="{{ $usuario->imagen ? asset('perfiles').'/'. $usuario->imagen : asset('img/usuario.svg')}}" alt="Imagen usuario">  
+                                        <div class="w-44">
+                                            <p class="font-bold uppercase">{{ $usuario->username }}</p>
                                             <span class="text-sm">{{ $usuario->name }}</span>
                                         </div>                      
                                     </a>
@@ -33,7 +33,7 @@
                             @endforeach
                         </ul>
                     @else
-                        <p>No se encontraron username.</p>
+                        <p class="mt-10 text-gray-500 uppercase font-bold">No se encontraron resultados.</p>
                     @endif
                 @endif
             </div>

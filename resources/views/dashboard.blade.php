@@ -33,7 +33,7 @@
 @endsection
 
 @section('titulo')
-    Perfil: {{$user->username}}
+    
 @endsection
 
 @section('contenido')
@@ -81,11 +81,14 @@
                                     <input type="submit" class="bg-zinc-500 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer" value="Seguir">
                                 </form>  
                             @else
+                            <div class="flex gap-2 items-center">
                                 <form action="{{ route('users.unfollow', $user) }}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <input type="submit" class="bg-red-500 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer" value="Dejar de seguir">
+                                    <input type="submit" class="bg-red-500 text-white uppercase rounded-lg px-4 py-2 text-xs font-bold cursor-pointer" value="Dejar de seguir">
                                 </form>
+                                {{-- <a href="#" class="text-gray-500 uppercase rounded-lg px-4 py-2 text-xs font-bold cursor-pointer border">Mensaje</a> --}}
+                            </div>                            
                             @endif                            
                         @endif
                     

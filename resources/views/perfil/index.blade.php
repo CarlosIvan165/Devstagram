@@ -17,6 +17,13 @@
                     @enderror
                 </div>
                 <div class="mb-5">
+                    <label for="name" class="mb-2 block uppercase text-gray font-bold text-gray-500">Nombre de usuario</label>
+                    <input type="text" name="name" id="name" placeholder="Tu nombre de usuario" class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror" value="{{ auth()->user()->name }}">
+                    @error('name')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
                     <label for="description" class="mb-2 block uppercase text-gray-500 font-bold">Tu Descripcion</label>
                     <textarea name="description" id="description" placeholder="description de tu perfil" class="border p-3 w-full rounded-lg @error('titulo') border-red-500 @enderror">{{ auth()->user()->description }}</textarea>
                     @error('description')

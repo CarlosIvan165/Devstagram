@@ -23,10 +23,11 @@ class PerfilController extends Controller
     }
 
     public function store(Request $request){
-        $request->request->add(['username' => Str::slug($request->username)]);
+        $request->request->add(['username' => $request->username]);
         
         $request->validate([
             'username' => ['required', 'unique:users,username,'.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,editar-perfil'],
+            'name' => ['required', 'unique:users,username,'.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,editar-perfil'],
             'description' ,
         ]);
 
@@ -47,6 +48,7 @@ class PerfilController extends Controller
         $usuario = User::find(auth()->user()->id);
 
         $usuario->username = $request->username;
+        $usuario->name = $request->name;
         $usuario->imagen = $nombreImagen ?? auth()->user()->imagen ?? null;
         $usuario->description = $request->description;
 

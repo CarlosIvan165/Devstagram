@@ -9,13 +9,13 @@
 @endpush
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:gap-10 md:items-center">
-        <div class="md:w-1/2 px-10">
+    <div class="lg:flex lg:justify-center lg:gap-10 lg:items-center">
+        <div class="lg:w-1/2 px-10">
             <form action="{{ route('imagenes.store')}}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
                 @csrf
             </form>
         </div>
-        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md_mt-0">
+        <div class="lg:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 lg_mt-0">
             <form id="dropzone" action="{{ route('posts.store') }}" method="POST">
                 @csrf
                 <div class="mb-5">
