@@ -6,20 +6,20 @@
 
 @section('contenido')
     @auth
-        <div>
-            <div class="w-l sm:w-4xl ml-15 buscador justify-start">
-                <form method="GET" action="{{ route('usuarios.buscar',) }}" class="">
+        <div class="grid justify-center">
+            <div class=" ">
+                <form method="GET" action="{{ route('usuarios.buscar',) }}">
                     @csrf
-                    <input type="text" name="usuario" placeholder="Buscar usuario..." class="border p-2 rounded w-1/2">
+                    <input type="text" name="usuario" placeholder="Buscar usuario..." class="border p-2 rounded md:w-xl">
                     <button type="submit" class="border uppercase font-bold cursor-pointer px-4 py-2 rounded ml-2">Buscar</button>
                 </form>
             </div>
-            <div class="w-xl sm:w-3xl ml-15">
+            <div class="w-auto">
                 @if(isset($usuario))
                     <h2 class="text-gray-500">Resultados para "{{ $usuario }}"</h2>
 
                     @if($username->count())
-                        <ul class="mt-6 w-15">
+                        <ul class="mt-6 w-l">
                             @foreach($username as $usuario)
                                 <li class="flex gap-3 mt-5">
                                     <a class="flex gap-3 items-center text-gray-600 text-sm" href="{{ route('posts.index', $usuario->username)}}">
