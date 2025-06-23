@@ -34,11 +34,11 @@ class PostController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate([
+        /* $request->validate([
             'titulo' => 'required|max:255',
             'descripcion' => 'required',
             'imagen' => 'required'
-        ]);
+        ]); */
 
         /* Post::create([
             'titulo' => $request->titulo,
@@ -55,11 +55,12 @@ class PostController extends Controller
         $post->user_id = auth()->user()->id;
         $post->save(); */
 
+        /* dd($request->imagen, $request->titulo, $request->descripcion); */
+
         $request->user()->posts()->create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'imagen' => $request->imagen,
-            'user_id' => auth()->user()->id
         ]);
 
         return redirect()->route('posts.index', auth()->user()->username);

@@ -42,7 +42,7 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentario.store');
 
 
-Route::post('/imagenes', [imagenController::class, 'store'])->name('imagenes.store');
+Route::post('/imagenes', [imagenController::class, 'store'])->name('imagenes.store')->middleware('auth');
 
 //Like a las fotos
 

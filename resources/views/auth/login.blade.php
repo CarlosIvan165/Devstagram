@@ -36,6 +36,9 @@
 
                 <input type="submit" value="Iniciar Sesion" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-b-lg">
             </form>
+            <div class="flex items-center justify-center">
+                <p>¿No te haz registrado? <a class="text-indigo-500" href="{{ route('register') }}">Registrate aqui</a></p>
+            </div>
         </div>
     </div>
 @endsection
